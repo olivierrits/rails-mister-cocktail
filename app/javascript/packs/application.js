@@ -18,3 +18,43 @@
 console.log('Hello World from Webpacker')
 
 import 'bootstrap';
+import $ from 'jquery';
+import 'select2';
+
+// const initUpdateNavbarOnScroll = () => {
+//   const navbar = document.querySelector('.navbar-lewagon');
+//   if (navbar) {
+//     window.addEventListener('scroll', () => {
+//       if (window.scrollY >= 800) {
+//         navbar.classList.add('navbar-lewagon-white');
+//         console.log("scrolled");
+//       } else {
+//         navbar.classList.remove('navbar-lewagon-white');
+//         console.log("scrolled");
+//       }
+//     });
+//   }
+// }
+
+// initUpdateNavbarOnScroll();
+
+const initSelect2 = () => {
+  $('.select2').select2();
+};
+
+initSelect2();
+
+// const navbar = document.querySelector(".navbar-lewagon");
+// console.log(navbar)
+
+// window.onscroll = function() {
+//    // log the length scrolled vertically
+//    console.log(window.pageYOffset);
+// }
+
+
+
+// if (window.pageYOffset > 800) {
+//   console.log("passed the barrier")
+//   navbar.classList.remove("nav-bar-gone");
+// }

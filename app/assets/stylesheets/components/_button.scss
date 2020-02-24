@@ -1,0 +1,11 @@
+.btn {
+  background-color: $between;
+  color: $button;
+  border-radius: 10px;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.btn a:hover {
+  background-color: $back;
+}

@@ -1,35 +1,69 @@
-<h1><%= @cocktail.name %></h1>
+<div class="navbar-lewagon">
+  <div style="width: 300px">
+    <%= image_tag('spicybrew.png') %>
+  </div>
+  <div style="width: 400px">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+  <div style="width: 300px">
+    <%= link_to "Back to Cocktail List", cocktails_path, class: "btn" %>
+  </div>
+</div>
 
-<h3>Description</h3>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= "#{dose.description} - #{dose.ingredient.name}" %> - <%= link_to raw('<i class="fas fa-trash-alt"></i>'), dose_path(dose), method: :delete %></li>
-  <% end %>
-</ul>
-<br>
-<h3>"Add an ingredient"</h3>
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit %>
-<% end %>
-<br>
-<hr>
-<h3>Reviews</h3>
-<ul>
-  <% @cocktail.reviews.each do |review| %>
-    <li><%= "*" * review.rating %><%=" - #{review.content}" %></li>
-  <% end %>
-</ul>
-<h3>"Add a review"</h3>
-<%= simple_form_for [@cocktail, @review] do |f| %>
-  <%= f.input :content %>
-  <%= f.select :rating, Review::STARS %>
-  <%= f.submit %>
-<% end %>
-<br>
-<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-lg-8">
+      <h3>Description</h3>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= "#{dose.description} - #{dose.ingredient.name}" %> - <%= link_to raw('<i class="fas fa-trash-alt"></i>'), dose_path(dose), method: :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-sm-6 col-lg-4 form-group">
+      <h7>"Add an ingredient"</h7>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description, class: "form-control" %>
+        <%= f.association :ingredient, class: 'select2' %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-sm-6 col-lg-8">
+      <h3>Reviews</h3>
+      <ul>
+        <% @cocktail.reviews.each do |review| %>
+          <li><%= "*" * review.rating %><%=" - #{review.content}" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-sm-6 col-lg-4 form-group">
+      <h7>"Add a review"</h7>
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+        <%= f.input :content, class: "form-control" %>
+        <%= f.select :rating, Review::STARS, class: 'select2' %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Back to Cocktail List", cocktails_path %>
-<hr>
+<div class="footer">
+  <div style="width: 300px; font-size: 0.75rem;">
+  <p><span style="font-style: italic">"Vodka may not be the answer, but it is worth a shot."</span></p>
+  </div>
+  <div style="width: 200px text-align: center;">
+    <ul>
+      <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href=""><i class="fab fa-twitter"></i></a></li>
+      <li><a href=""><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </div>
+  <div style="width: 300px;">
+  </div>
+</div>
 

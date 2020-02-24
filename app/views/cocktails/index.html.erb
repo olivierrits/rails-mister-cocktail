@@ -1,11 +1,68 @@
-<h1>Cocktails!!</h1>
+<div class="front">
+  <div class="front-content">
+    <h1>“You can’t buy happiness,<br>
+    but you can prepare a cocktail.<br>
+  And that’s kind of the same thing.”</h1>
+    <p>
+      I see America drinking the fabulous cocktails I make.<br>
+      Americans getting stinky on something I stir or shake.<br>
+      The sex on the beach, the schnapps made from peach,<br>
+      The Velvet Hammer, the Alabama Slamma!<br>
+      I make things with juice and froth: the Pink Squirrel, the 3-Toed Sloth.<br>
+      I make drinks so sweet and snazzy:<br>
+      The Iced Tea, The Kamikaze, The Orgasm, The Death Spasm,<br>
+      The Singapore Sling, The Dingaling.<br>
 
-<ul>
-<% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %> - <%= link_to raw('<i class="fas fa-trash-alt"></i>'), cocktail_path(cocktail), method: :delete %> </li>
-<% end %>
-</ul>
+      America you’ve just been devoted to every flavor I got.<br>
+      But if you want to got loaded, why don’t you just order a shot?<br>
 
-<%= link_to "Create a new cocktail", new_cocktail_path %>
+      Bar is open!
+    </p>
+
+  </div>
+</div>
+
+<div class="navbar-lewagon">
+  <div style="width: 300px">
+    <%= image_tag('spicybrew.png') %>
+  </div>
+  <div style="width: 400px">
+    <h1>Discover our Cocktails</h1>
+  </div>
+  <div style="width: 300px">
+    <%= link_to "Create a new cocktail", new_cocktail_path, class: "btn" %>
+  </div>
+</div>
 
 
+<div class="body-container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="cocktail-card">
+        <div class="cocktail-pict">
+        </div>
+        <div class="cocktail-content">
+          <div><h7><%= link_to cocktail.name, cocktail_path(cocktail) %></h7></div>
+          <div><%= link_to raw('<i class="fas fa-trash-alt"></i>'), cocktail_path(cocktail), method: :delete %></div>
+        </div>
+        <div class="shake">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="footer">
+  <div style="width: 300px; font-size: 0.75rem;">
+  <p><span style="font-style: italic">"Vodka may not be the answer, but it is worth a shot."</span></p>
+  </div>
+  <div style="width: 200px text-align: center;">
+    <ul>
+      <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href=""><i class="fab fa-twitter"></i></a></li>
+      <li><a href=""><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </div>
+  <div style="width: 300px;">
+  </div>
+</div>

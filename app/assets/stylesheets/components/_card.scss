@@ -1,0 +1,40 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.cocktail-card {
+  background-color: $button;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 10px;
+  width: 300px;
+}
+
+.cocktail-pict {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px 5px 0px 0px;
+  height: 180px;
+  background-image: asset-url('front2.jpg');
+  background-size: cover;
+}
+
+.cocktail-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.shake {
+
+}
+
+.show {
+  margin: 10px;
+  border: 3px solid $button;
+}
